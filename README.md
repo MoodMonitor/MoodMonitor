@@ -1,10 +1,13 @@
 # MoodMonitor
 
-An amateur Mood Tracker application, written in Python using module Kivy.
+An amateur Mood Tracker application, written in Python using module Kivy. The main goal of the project is to improve programming skills.
 
-The application is designed to encourage the user to think about how his day had passe.
+### About App
 
- *This text will be italic*
+The application aims to encourage reflection about the past day. The application collects user moods and helps to analyze them using graphs and diagrams.
+What make application difference 
+
+*This text will be italic*
  _This will also be italic_
 
  **This text will be bold**
