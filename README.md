@@ -1,4 +1,7 @@
-MoodMonitor - an amateur Mood Tracker application, written in Python using module Kivy.
+# MoodMonitor
+
+An amateur Mood Tracker application, written in Python using module Kivy.
+
 The application is designed to encourage the user to think about how his day had passe.
 
  *This text will be italic*
