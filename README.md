@@ -1,7 +1,31 @@
 MoodMonitor - an amateur Mood Tracker application, written in Python using module Kivy.
 The application is designed to encourage the user to think about how his day had passe.
 
+ *This text will be italic*
+ _This will also be italic_
 
+ **This text will be bold**
+ __This will also be bold__
+
+ _You **can** combine them_
+
+
+- [x] @mentions, #refs, [links](), **formatting**, and <del>tags</del> supported
+- [x] list syntax required (any unordered or ordered list supported)
+- [x] this is a complete item
+- [ ] this is an incomplete item
+
+[Video](https://drive.google.com/file/d/1eTmhD7v5WN0rs3TP6Y9U3S9cvAjlQ2MH/view?usp=sharing)
+
+<p float="left">
+  <img src="https://user-images.githubusercontent.com/81371889/113293266-d69a2080-92f5-11eb-937d-b5ad5d5a38a0.png" width="115" />
+  <img src="https://user-images.githubusercontent.com/81371889/113293289-de59c500-92f5-11eb-998b-058380154a7c.png" width="115" /> 
+  <img src="https://user-images.githubusercontent.com/81371889/113293292-def25b80-92f5-11eb-90ef-0f3f6c191743.png" width="115" />
+  <img src="https://user-images.githubusercontent.com/81371889/113293293-df8af200-92f5-11eb-80ec-66d10dcef3d9.jpg" width="115" /> 
+  <img src="https://user-images.githubusercontent.com/81371889/113293299-e0238880-92f5-11eb-9bd8-ce8505171a9c.jpg" width="115" />
+  <img src="https://user-images.githubusercontent.com/81371889/113293303-e154b580-92f5-11eb-9cd0-14dec31b025c.jpg" width="115" /> 
+  <img src="https://user-images.githubusercontent.com/81371889/113293304-e1ed4c00-92f5-11eb-92c2-1e72d7e71053.jpg" width="115" />
+</p>
 
 
 <!--
