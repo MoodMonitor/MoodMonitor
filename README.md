@@ -20,7 +20,9 @@ What makes the application different is the ability to monitor not only the mood
 [To see all features of application click to video](https://drive.google.com/file/d/1eTmhD7v5WN0rs3TP6Y9U3S9cvAjlQ2MH/view?usp=sharing)
 
 
-
+## Download
+Android: https://drive.google.com/file/d/1mW6MdTPVZV06EV_xHVIAhJ0DxeXbiCAJ/view?usp=sharing
+PC(Windows): https://drive.google.com/file/d/1WshxzsUTEfz4xMamDKLI73X4XbZwBfWc/view?usp=sharing
 
 ## Application still in development
 - [ ] Notifications
@@ -28,6 +30,7 @@ What makes the application different is the ability to monitor not only the mood
 - [ ] Translate to English
 - [ ] Release in Google Play
 - [ ] Integration of PC with Android
+
 
 
 
