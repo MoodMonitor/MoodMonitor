@@ -1,6 +1,5 @@
 
 import matplotlib
-#matplotlib.use('module://garden_matplotlib.backend_kivy')
 from matplotlib.figure import Figure
 
 
@@ -1578,7 +1577,7 @@ Builder.load_string("""
     wyso: 0
     niesamowite: 0
     cols: 5
-    rows: 2 # może dać rows: 3 i wpierodlic tam widgety zeby byl wiekszy odstep miedzy kolkami
+    rows: 2
     size_hint:1, None
     spacing: app.sz / 74
     padding: app.sz/12,0,app.sz/13 ,0
@@ -1705,7 +1704,7 @@ Builder.load_string("""
         width: root.width
         #padding: 0,-app.sz/8/6.5,0,-app.sz/8/6.5
         height: self.minimum_height
-        Label: #Tutaj bedzie informacja jaki to dzien
+        Label:
             id: dzien
             size_hint: 1,None
             #text: "Tutaj bedzie tekst"
@@ -1788,7 +1787,7 @@ Builder.load_string("""
                         width: 1.5
                         rectangle: (self.x, self.y, self.width, self.height)  
     
-        GridLayout: # PRAWO Trzymacz do wpisu aktywnosci
+        GridLayout:
             id: gr
             cols: 1
             size_hint: 1,None
@@ -1805,7 +1804,6 @@ Builder.load_string("""
     TextInput:
         id: te
         background_color: (1,1,1,0) if self.focus else (1,1,1,0)
-        #text:"SZlachetne zdrowie nikt sie nei dowie jako smakujesz"
         size_hint: (1,None) if self.text != "" else (None,None) 
         width: 0
         height: 0 if self.text == "" else max(app.wy/25, self.minimum_height)
@@ -1866,8 +1864,6 @@ Builder.load_string("""
                 Line:
                     width: 1.5
                     rectangle: (self.x, self.y, self.width, self.height)  
-            #text: " SDFSDFSDFADSDASDSASDASDASS SDFSDFSDFADSDASDSASDASDASSDASDASDnikt sie, Szlachetne zdrowie nikt sie, Szlachetne zdrowie nikt sie  "
-            #text: "    sie, Szlachetne zdrowie nikt sie, Szlachetne zdrowie nikt sie "
             #size_hint: ((1,None) if self.minimum_height > self.parent.height else (1,1)) if self.text != "" else (None,None) 
             size_hint: (1,1) if self.height > self.minimum_height else (1,None)
             width: 0
@@ -1947,8 +1943,8 @@ class S1(Screen):
         except Exception as e:
             print(e, "S1 INIT")
 
-        global wpis #Flaga do tego czy zostal dany wpis
-        global edit #Chyba do usuniecia
+        global wpis
+        global edit
         edit = 0
         wpis = 0
         self.fla = 0
@@ -2068,7 +2064,7 @@ class S1(Screen):
                 self.l.text = "PUŚC" #Label informacyjny
             except:
                 pass
-        if self.scroll.scroll_y > 1: #Label informacyjny, można zmienić na jednego ifa
+        if self.scroll.scroll_y > 1:
             self.l = Label(text = "Przesuń w górę, aż napis zmieni się na 'PUSC', aby wyświetlić następny miesiąc", size_hint = (1,None), pos_hint = {"top": 0.92},font_size = sp(10))
             self.add_widget(self.l)
 
@@ -2144,7 +2140,7 @@ class S1(Screen):
 
     def StworzPuste(self): # Tworzy puste wpisy tak, aby potem nimi manipulowac
         czas = time.time()
-        try: #żeby na starcie przy tworzeniu aktywnosci
+        try: 
             self.sl = {} # slownik w ktorym sa przechowywane widgety
             store["aktywnosci"] = store["aktywnosci"]
             for i in range(1,32):
@@ -2378,7 +2374,7 @@ class S2(Screen):
         self.ZmianaAktywnosci()
 
 
-    def on_pre_enter(self, *args): #ZMIENIC NA GLOBALNA FLAGA == 1
+    def on_pre_enter(self, *args):
         self.ZmienKalendarz(self.today) #Zeby robilo sie tylko po wpisie
 
 
@@ -2585,7 +2581,6 @@ class S2(Screen):
 
 #Statystyki
 class S3(Screen):
-    #@@@@@@@@@@@@@@@@@@ DODAC ZEBY W PRE ENTERZE SIE AKTUALIZOWAL PO WPISIE
     jeden = StringProperty()
     dwa = StringProperty()
     trzy = StringProperty()
@@ -3550,15 +3545,6 @@ class S7(Screen):
             except:
                 pass
 
-        """ #nie wiem czy jest git to wyzej
-        try: # dz to jest label ktory mowi ktory dzien jest wpisywany
-            self.dz.text = str(dzien.la.text) +"/" + str(dzis.month) + "/"+ str(dzis.year)
-        except Exception as e: #to jest do EDITA
-            #print(e, "WPIS PRENTER1")
-            global d
-            d = self.dz
-        """
-
         #START GLOWNEGO DODAWANIA
         try:
             self.list = list(store["aktywnosci"])
@@ -3719,14 +3705,11 @@ class S7(Screen):
             global wyl
             wyl.focus = False
             Clock.schedule_once(self.pom2, 0)# wylaczamy focus dla textinputa, zeby tekst sie zapamietal
-            #TEN CLOCK RACZEJ NIEPOTRZEBNY ALE
-            #print(store["tymczasowe"])
-            #print(wyl.text)
         except Exception as e:
             print(e, "FOCUS")
             pass
         try:
-            global dzis # to tak asekuracyjnie, zeby nie wywalilo, ze nie zdefiniowany dzis jest
+            global dzis
             store["tymczasowe"]["dzien"] #próbujemy, czy jest ocena dnia
             try:
                 store["daty"]
@@ -3940,7 +3923,7 @@ class S7(Screen):
             el.focus = False
             Clock.schedule_once(self.Test, 0)
 
-    def Test(self, czas): #zeby ustawic wysokosc popupa bo sie inaczej nei da ehh
+    def Test(self, czas):
         self.popup.height = self.content.minimum_height + Window.height/11
 
     def bind1(self, el, p, el2): #bind do przycisku przycisku z popupa
